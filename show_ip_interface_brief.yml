@@ -1,0 +1,23 @@
+# source: kheith Barker 
+---
+- name: Issue show commands
+  hosts: 192.168.1.34
+  connection: local
+  tasks:
+    - name: Show ip int brief
+      ios_command:
+        commands:
+          - show ip int brief
+        provider:
+          host: 192.168.1.34
+          port: 22
+          authorize: yes
+          auth_pass: cisco
+          username: admin
+          password: cisco
+      register: if_data
+
+    - name: Interfaces output
+      debug:
+        var: if_data['stdout_lines'][0]
+...
