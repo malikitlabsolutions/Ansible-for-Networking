@@ -1,4 +1,4 @@
 ---
 ansible_network_os: ios
-ansible_user: user1
-ansible_ssh_pass: password1
+ansible_user: cisco
+ansible_ssh_pass: cisco
